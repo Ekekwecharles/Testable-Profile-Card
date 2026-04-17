@@ -1,0 +1,159 @@
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #374151;
+  --border: #d1d5db;
+  --accent: #1d4ed8;
+  --accent-visited: #5b21b6;
+  --shadow: 0 14px 32px rgba(17, 24, 39, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.page {
+  min-height: 100vh;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.profile-card {
+  width: min(100%, 68rem);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.profile-card__header {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.profile-card__name {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.profile-card__time-label,
+.profile-card__time,
+.profile-card__caption {
+  margin: 0;
+  color: var(--muted);
+}
+
+.profile-card__time {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  color: #111827;
+}
+
+.profile-card__figure {
+  margin: 0;
+  width: fit-content;
+}
+
+.profile-card__avatar {
+  display: block;
+  max-width: 100%;
+  width: clamp(8rem, 32vw, 13.75rem);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.875rem;
+  border: 1px solid var(--border);
+}
+
+.profile-card__section-title {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+  font-size: 1.1rem;
+}
+
+.profile-card__bio {
+  margin: 0;
+}
+
+.profile-card__social-list,
+.profile-card__list {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:visited {
+  color: var(--accent-visited);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+@media (min-width: 48rem) {
+  .profile-card {
+    padding: 1.5rem;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "figure header"
+      "figure bio"
+      "figure social"
+      "figure hobbies"
+      "figure dislikes";
+    align-items: start;
+    column-gap: 1.5rem;
+  }
+
+  .profile-card__figure {
+    grid-area: figure;
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  .profile-card__header {
+    grid-area: header;
+  }
+
+  .profile-card__bio-section {
+    grid-area: bio;
+  }
+
+  .profile-card__social {
+    grid-area: social;
+  }
+
+  .profile-card__list-section[data-testid="test-user-hobbies"] {
+    grid-area: hobbies;
+  }
+
+  .profile-card__list-section[data-testid="test-user-dislikes"] {
+    grid-area: dislikes;
+  }
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testable Profile Card</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-testid="test-page-body">
+    <main class="page" data-testid="test-page-main">
+      <article class="profile-card" data-testid="test-profile-card">
+        <header class="profile-card__header" data-testid="test-profile-header">
+          <h1 class="profile-card__name" data-testid="test-user-name">Chinonso Charles</h1>
+          <p class="profile-card__time-label" data-testid="test-user-time-label">
+            Current epoch time (ms):
+          </p>
+          <p
+            class="profile-card__time"
+            data-testid="test-user-time"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            Loading...
+          </p>
+        </header>
+
+        <figure class="profile-card__figure" data-testid="test-user-figure">
+          <img
+            class="profile-card__avatar"
+            data-testid="test-user-avatar"
+            src="./image/mypic.jpeg"
+            alt="Portrait photo of Chinonso Charles"
+            width="220"
+            height="220"
+          />
+          <figcaption class="profile-card__caption" data-testid="test-user-figure-caption">
+            Chinonso Charles
+          </figcaption>
+        </figure>
+
+        <section class="profile-card__bio-section" data-testid="test-user-bio-section">
+          <h2 class="profile-card__section-title" data-testid="test-user-bio-title">Bio</h2>
+          <p class="profile-card__bio" data-testid="test-user-bio">
+            Frontend engineer who enjoys building inclusive interfaces, mentoring new developers,
+            and turning product requirements into clean, testable web experiences.
+          </p>
+        </section>
+
+        <nav
+          class="profile-card__social"
+          data-testid="test-user-social-links"
+          aria-label="Social profile links"
+        >
+          <h2 class="profile-card__section-title" data-testid="test-user-social-title">
+            Social Links
+          </h2>
+          <ul class="profile-card__social-list" data-testid="test-user-social-list-items">
+            <li data-testid="test-user-social-item-twitter">
+              <a
+                data-testid="test-user-social-twitter"
+                href="https://x.com/xharlessnow"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Chinonso Charles Twitter profile in a new tab"
+              >
+                Twitter
+              </a>
+            </li>
+            <li data-testid="test-user-social-item-github">
+              <a
+                data-testid="test-user-social-github"
+                href="https://github.com/Ekekwecharles?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Chinonso Charles GitHub profile in a new tab"
+              >
+                GitHub
+              </a>
+            </li>
+            <li data-testid="test-user-social-item-linkedin">
+              <a
+                data-testid="test-user-social-linkedin"
+                href="https://www.linkedin.com/in/xharlessnow/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Chinonso Charles LinkedIn profile in a new tab"
+              >
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <section class="profile-card__list-section" data-testid="test-user-hobbies">
+          <h2 class="profile-card__section-title" data-testid="test-user-hobbies-title">Hobbies</h2>
+          <ul class="profile-card__list" data-testid="test-user-hobbies-list">
+            <li data-testid="test-user-hobby-reading">Reading design systems case studies</li>
+            <li data-testid="test-user-hobby-photography">Drawing and Painting</li>
+            <li data-testid="test-user-hobby-cycling">Weekend Skating</li>
+          </ul>
+        </section>
+
+        <section class="profile-card__list-section" data-testid="test-user-dislikes">
+          <h2 class="profile-card__section-title" data-testid="test-user-dislikes-title">
+            Dislikes
+          </h2>
+          <ul class="profile-card__list" data-testid="test-user-dislikes-list">
+            <li data-testid="test-user-dislike-slow-ui">Slow and unresponsive interfaces</li>
+            <li data-testid="test-user-dislike-poor-a11y">Poor accessibility practices</li>
+            <li data-testid="test-user-dislike-unclear-requirements">Unclear requirements</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+<!-- src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" -->
